@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+
 class menu extends StatefulWidget {
   const menu({ Key? key }) : super(key: key);
 
@@ -8,16 +9,19 @@ class menu extends StatefulWidget {
   _menuState createState() => _menuState();
 }
 
-class _menuState extends State<menu> { 
+class _menuState extends State<menu> 
+{ 
  @override
   Widget build(BuildContext context) {
     return Drawer(
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: Image.asset( "images/perfil.png", height: 830,)),
-            DrawerListitem(title: "Gabriel Caetano Pinheiro Fernandes", icon: "images/", fntSz: 16,),
+        child: Column(        
+          children: [          
+            CircleAvatar( 
+              radius: 50,
+              backgroundImage: AssetImage("images/perfil.png"),), 
+              Divider(color: Colors.black87,),
+            Center(child: DrawerListitem(title: "Gabriel Caetano Pinheiro Fernandes", icon: "",  fntSz: 16,)),
             DrawerListitem(title: "15/06/2002 - 19y | Solteiro", icon: "images/", fntSz: 15),
             DrawerListitem(title: "Rua Berilo - 465 - Alto Caiçaras | MG", icon: "images/", fntSz: 15  ),
             DrawerListitem(title: "gabrielcaetano@unipam.edu.br", icon: "images/", fntSz: 15),
@@ -46,8 +50,7 @@ class DrawerListitem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
-      horizontalTitleGap: 0.0,
-      leading: SvgPicture.asset(icon),
+      horizontalTitleGap: 0.0,   
       title: Text(
         title,
         style: TextStyle(
@@ -59,7 +62,4 @@ class DrawerListitem extends StatelessWidget {
   }
 }
 
-class SvgPicture {
-  static asset(String icon) {}
-}
- 
+

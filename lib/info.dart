@@ -66,7 +66,7 @@ class CustomTextBloc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
+      children: [   
         Container(
           color: Colors.grey.shade400,
           width: MediaQuery.of(context).size.width -
